@@ -1,6 +1,6 @@
 # Jordanian Arabic Emotion Classification AI Agent
 
-A production-grade AI Agent project leveraging **LangGraph**, **LangChain**, and **FastAPI** to classify emotions in Jordanian Arabic sentences into four discrete classes: `happy`, `sad`, `angry`, or `neutral`.
+ production-oriented AI Agent project leveraging LangGraph, LangChain, and FastAPI to classify emotions in Jordanian Arabic sentences into four discrete classes: `happy`, `sad`, `angry`, or `neutral`.
 
 ---
 
