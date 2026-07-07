@@ -4,22 +4,38 @@ A production-grade AI Agent project leveraging **LangGraph**, **LangChain**, and
 
 ---
 
-## 🚀 System Architecture
+## System Architecture
 
 The pipeline processes input through a structured graph configuration, preventing unverified or broken data structures from escaping to the outer user interface boundaries:
 
 ```text
-  START 
-    │
-    ▼
+START 
+  │
+  ▼
 [Normalize Text Node] ──► Removes Harakat, normalizes characters, strips repetition.
-    │
-    ▼
+  │
+  ▼
 [Classify Emotion Node] ──► Passes context to Cloud LLM through Structured Output binding.
-    │
-    ▼
+  │
+  ▼
 [Validate Output Node] ──► Asserts verification logic (boundaries / target enumeration).
-    │
-    ├──► [Is Valid? True]  ──► END (Returns verified state)
-    │
-    └──► [Is Valid? False] ──► (Has Retry capacity?) ──► Loop back to Classify
+  │
+  ├──► [Is Valid? True]  ──► END (Returns verified state)
+  │
+  └──► [Is Valid? False] ──► (Has Retry capacity?) ──► Loop back to Classify
+```
+
+---
+
+## How to Use the Interactive UI (Swagger)
+
+1. Open your browser and navigate to `http://127.0.0.1:8000/docs`.
+2. Locate the green **`POST /predict`** endpoint box and click to expand it.
+3. Click the **"Try it out"** button on the right side.
+4. Modify the placeholder JSON in the **Request body** with your Jordanian Arabic sentence:
+
+```json
+{
+  "text": "والله اليوم مبسوط كثير"
+}
+```
